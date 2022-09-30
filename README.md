@@ -28,7 +28,7 @@
 | user               | references| null: false, foreign_key: true |
 ###アソシエーション
 - belongs_to   :user
-- has_one      :purchas
+- has_one      :purchase
 - belongs_to_active_hash :category_id
 - belongs_to_active_hash :status_id
 - belongs_to_active_hash :delivery_cost_id
@@ -36,7 +36,7 @@
 - belongs_to_active_hash :delivery_date_id
 
 
-##purchasテーブル
+##purchasesテーブル
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
 | item               | references | null: false, foreign_key: true |
@@ -46,7 +46,7 @@
 - has_one       :delivery
 - belongs_to    :user
 
-##deliverysテーブル
+##deliveriesテーブル
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
 | postal_code        | string     | null: false,                   |
@@ -55,7 +55,7 @@
 | address            | string     | null: false,                   |
 | building           | string     |                                |
 | phone_namber       | string     | null: false,                   |
-| purchas            | references | null: false, foreign_key: true |
+| purchase            | references | null: false, foreign_key: true |
 ###アソシエーション
-- belongs_to  :purchas
+- belongs_to  :purchase
 - belongs_to_active_hash :prefecture_id
