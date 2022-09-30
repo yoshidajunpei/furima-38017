@@ -10,7 +10,7 @@
 | encrypted_passward | string | null: false               |
 | dob                | string | null: false               |
 ###アソシエーション
-- has_many :items
+- has_one    :items
 - belongs_to :parches
 
 
@@ -26,12 +26,12 @@
 | prefecture_id      | integer   | null: false, foreign_key: true |
 | delivery_date_id   | integer   | null: false, foreign_key: true |
 ###アソシエーション
-- belong_to :users
-- belongs_to   :parchases
+- belongs_to   :user
+- belongs_to   :parches
 - belongs_to_active_hash :category_id
 - belongs_to_active_hash :status_id
 - belongs_to_active_hash :delivery_cost_id
-- belongs_to_active_hash :delivery_address_id
+- belongs_to_active_hash :prefecture_id
 - belongs_to_active_hash :delivery_date_id
 
 
@@ -41,17 +41,19 @@
 | item               | text       | null: false, foreign_key: true |
 | user               | references | null: false, foreign_key: true |
 ###アソシエーション
-- has_one :items
-- has_one  :deliverys
+- has_one :item
+- has_one :delivery
+- has_one :user
 
 ##deliverysテーブル
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
 | postal_code        | string     | null: false,                   |
-| prefecture         | srting     | null: false,                   |
+| prefecture_id      | srting     | null: false,                   |
 | municipality       | string     | null: false,                   |
 | address            | string     | null: false,                   |
 | building           | string     |                                |
 | phone_namber       | integer    | null: false,                   |
 ###アソシエーション
-- belongs_to  :parshases
+- belongs_to  :parches
+- belongs_to_active_hash :prefecture_id

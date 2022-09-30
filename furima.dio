@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="F8fzIC7VnS97fZQAjS4g" name="ページ1">
-        <mxGraphModel dx="521" dy="520" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="630" dy="520" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -28,22 +28,28 @@
                 <mxCell id="93" value="postal_code (string型, Not Null)&#10;&#10;prefectuer (string型, Not Null)&#10;&#10;municipality (string型, Not Null)&#10;&#10;address (string型, Not Null)&#10;&#10;buiiding (string型, Not Null)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="90" vertex="1">
                     <mxGeometry y="26" width="240" height="144" as="geometry"/>
                 </mxCell>
-                <mxCell id="94" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;entryX=0;entryY=0.665;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="77" edge="1">
-                    <mxGeometry width="100" height="100" relative="1" as="geometry">
-                        <mxPoint x="250" y="255" as="sourcePoint"/>
-                        <mxPoint x="350" y="155" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
                 <mxCell id="97" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERmandOne;startArrow=ERmandOne;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="93" target="85" edge="1">
                     <mxGeometry width="100" height="100" relative="1" as="geometry">
                         <mxPoint x="230" y="400" as="sourcePoint"/>
                         <mxPoint x="330" y="300" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="98" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERmandOne;startArrow=ERmandOne;entryX=0.525;entryY=1.013;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.413;exitY=-0.018;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="83" target="77">
+                <mxCell id="98" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERmandOne;startArrow=ERmandOne;entryX=0.525;entryY=1.013;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.413;exitY=-0.018;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="83" target="77" edge="1">
                     <mxGeometry width="100" height="100" relative="1" as="geometry">
                         <mxPoint x="230" y="400" as="sourcePoint"/>
                         <mxPoint x="330" y="300" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="100" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERmandOne;startArrow=ERmandOne;entryX=0;entryY=0;entryDx=0;entryDy=0;exitX=1.004;exitY=1.013;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="74" target="83" edge="1">
+                    <mxGeometry width="100" height="100" relative="1" as="geometry">
+                        <mxPoint x="260" y="370" as="sourcePoint"/>
+                        <mxPoint x="360" y="270" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="101" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="74" target="77">
+                    <mxGeometry width="100" height="100" relative="1" as="geometry">
+                        <mxPoint x="270" y="370" as="sourcePoint"/>
+                        <mxPoint x="370" y="270" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
             </root>
