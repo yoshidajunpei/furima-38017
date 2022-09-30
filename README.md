@@ -11,7 +11,7 @@
 | birth              | date   | null: false               |
 ###アソシエーション
 - has_many   :items
-- has_many   :parchases
+- has_many   :purchases
 
 
 ##itemsテーブル
@@ -28,7 +28,7 @@
 | user               | references| null: false, foreign_key: true |
 ###アソシエーション
 - belongs_to   :user
-- has_one      :parchas
+- has_one      :purchas
 - belongs_to_active_hash :category_id
 - belongs_to_active_hash :status_id
 - belongs_to_active_hash :delivery_cost_id
@@ -36,7 +36,7 @@
 - belongs_to_active_hash :delivery_date_id
 
 
-##parchasesテーブル
+##purchasテーブル
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
 | item               | references | null: false, foreign_key: true |
@@ -55,7 +55,7 @@
 | address            | string     | null: false,                   |
 | building           | string     |                                |
 | phone_namber       | string     | null: false,                   |
-| parchas            | references | null: false, foreign_key: true |
+| purchas            | references | null: false, foreign_key: true |
 ###アソシエーション
-- belongs_to  :parchas
+- belongs_to  :purchas
 - belongs_to_active_hash :prefecture_id
