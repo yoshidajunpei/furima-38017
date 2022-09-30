@@ -28,7 +28,7 @@
 | user               | references| null: false, foreign_key: true |
 ###アソシエーション
 - belongs_to   :user
-- has_one      :parches
+- has_one      :parchas
 - belongs_to_active_hash :category_id
 - belongs_to_active_hash :status_id
 - belongs_to_active_hash :delivery_cost_id
@@ -39,7 +39,7 @@
 ##parchasesテーブル
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
-| item               | text       | null: false, foreign_key: true |
+| item               | references | null: false, foreign_key: true |
 | user               | references | null: false, foreign_key: true |
 ###アソシエーション
 - belongs_to    :item
@@ -54,8 +54,8 @@
 | municipality       | string     | null: false,                   |
 | address            | string     | null: false,                   |
 | building           | string     |                                |
-| phone_namber       | integer    | null: false,                   |
-| user               | references | null: false, foreign_key: true |
+| phone_namber       | string     | null: false,                   |
+| parchas            | references | null: false, foreign_key: true |
 ###アソシエーション
-- belongs_to  :parches
+- belongs_to  :parchas
 - belongs_to_active_hash :prefecture_id
