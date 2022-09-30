@@ -8,10 +8,10 @@
 | last_name_kana     | string | null: false               |
 | email              | string | null: false, unique: true |
 | encrypted_passward | string | null: false               |
-| birth              | string | null: false               |
+| birth              | date   | null: false               |
 ###アソシエーション
 - has_many   :items
-- has_many   :parches
+- has_many   :parchases
 
 
 ##itemsテーブル
