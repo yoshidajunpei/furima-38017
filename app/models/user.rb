@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :birth, presence: true
+  validates :nick_name, presence: true
 
   with_options presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, message: '全角文字（漢字・ひらがな・カタカナ）を使用してください' } do
     validates :first_name
@@ -18,4 +19,7 @@ class User < ApplicationRecord
 
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,}+\z/i.freeze
   validates_format_of :password, with: PASSWORD_REGEX, message: 'には6文字以上の英字と数字の両方を含めて設定してください'
+
+  
+
 end
