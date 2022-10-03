@@ -41,19 +41,19 @@ RSpec.describe User, type: :model do
     end
 
     it '英字のみのパスワードは登録できない' do
-      @user.password = "/\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,}+\z/i.freeze"
+      @user.password = "aaaaaa"
       @user.valid?
       expect(@user.errors.full_messages).to include("Password には6文字以上の英字と数字の両方を含めて設定してください")
     end
 
     it '数字のみのパスワードは登録できない' do
-      @user.password = "/\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,}+\z/i.freeze"
+      @user.password = "111111"
       @user.valid?
       expect(@user.errors.full_messages).to include("Password には6文字以上の英字と数字の両方を含めて設定してください")
     end
 
     it '全角文字を含むパスワードは登録できない' do
-      @user.password = "/\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,}+\z/i.freeze"
+      @user.password = "あああ"
       @user.valid?
       expect(@user.errors.full_messages).to include("Password には6文字以上の英字と数字の両方を含めて設定してください")
     end
