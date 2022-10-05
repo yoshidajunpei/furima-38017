@@ -13,7 +13,6 @@ class ItemsController < ApplicationController
 
   
   def create
-    #  Item.create(item_params)
     @item = Item.new(item_params)
      if @item.save
       redirect_to root_path
@@ -32,4 +31,4 @@ class ItemsController < ApplicationController
 
 end
 
-# パラメータに.merge(user_id: current_user.id)を表示させていないとエラー表示となる？？
+

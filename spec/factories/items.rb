@@ -1,14 +1,22 @@
 FactoryBot.define do
   factory :item do
     name                   {Faker::Name}
-    description            { "商品説明文" }
-    category_id            { '2,3,4,5,6,7,8,9,10,11'}
-    status_id              { '2,3,4,5,6,7'}
+    description            {"商品説明文"}
+    category_id            {2}
+    status_id              {2}
     price                  {Faker::Number.between(from: 300, to:9999999 )}
-    delivery_cost_id       {'2,3'}
-    prefecture_id          {'2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48'}
-    delivery_date_id       {'2,3,4'}
-
+    delivery_cost_id       {2}
+    prefecture_id          {2}
+    delivery_date_id       {2}
     
+    #画像とユーザーのアソシエーション
+    association :user
+
+    #画像添付
+    after(:build) do |item|
+      item.image.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png')
+    end
+  
+  
   end
 end
