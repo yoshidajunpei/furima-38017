@@ -82,27 +82,27 @@ RSpec.describe Item, type: :model do
     end
 
     it '商品の状態に「---」が選択されている場合は出品できない' do
-      @item.category_id = '1'
+      @item.status_id= '1'
       @item.valid?
-      expect(@item.errors.full_messages).to include("Category can't be blank")
+      expect(@item.errors.full_messages).to include("Status can't be blank")
     end
 
     it '配送料の負担に「---」が選択されている場合は出品できない' do
-      @item.category_id = '1'
+      @item.delivery_cost_id  = '1'
       @item.valid?
-      expect(@item.errors.full_messages).to include("Category can't be blank")
+      expect(@item.errors.full_messages).to include("Delivery cost can't be blank")
     end
 
     it '発送元の地域に「---」が選択されている場合は出品できない' do
-      @item.category_id = '1'
+      @item.prefecture_id  = '1'
       @item.valid?
-      expect(@item.errors.full_messages).to include("Category can't be blank")
+      expect(@item.errors.full_messages).to include("Prefecture can't be blank")
     end
 
     it '発送までの日に「---」が選択されている場合は出品できない' do
-      @item.category_id = '1'
+      @item.delivery_date_id = '1'
       @item.valid?
-      expect(@item.errors.full_messages).to include("Category can't be blank")
+      expect(@item.errors.full_messages).to include("Delivery date can't be blank")
     end
     
     it '画像がないと出品できない' do
