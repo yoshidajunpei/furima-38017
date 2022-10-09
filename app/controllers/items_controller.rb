@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user! ,except: [:index,:show]
   before_action :set_item, only: [:show,:edit,:update,:destroy]
-  #学習用メモ before_action :contributor_confirmation, only:[:edit,:update] 
+  before_action :contributor_confirmation, only:[:edit,:update] 
 
   def index
     @items = Item.all.order(id: "DESC")
@@ -25,9 +25,10 @@ class ItemsController < ApplicationController
    end
 
    def edit
-    unless current_user == @item.user
-      redirect_to root_path
-    end
+    #学習用メモ（before_action:contributor_confirmation使用しない場合）
+    # unless current_user == @item.user
+    #   redirect_to root_path
+    # end
    end
 
    def update
@@ -60,10 +61,10 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-  #学習用メモ
-  # def contributor_confirmation
-  #   redirect_to root_path unless current_user == @item.user
-  # end
+  
+  def contributor_confirmation
+    redirect_to root_path unless current_user == @item.user
+  end
 
 
 end
