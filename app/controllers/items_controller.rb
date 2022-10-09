@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user! ,except: [:index,:show]
-  before_action :set_item, only: [:show]
+  before_action :set_item, only: [:show,:edit,:update]
   #学習用メモ before_action :contributor_confirmation, only:[:edit,:update] 
 
   def index
@@ -25,14 +25,12 @@ class ItemsController < ApplicationController
    end
 
    def edit
-    @item = Item.find(params[:id])
     unless current_user == @item.user
       redirect_to root_path
     end
    end
 
    def update
-    @item = Item.find(params[:id])
     @item.update(item_params) 
     if @item.save
       redirect_to item_path 
