@@ -3,12 +3,14 @@ class Item < ApplicationRecord
   #アソシエーション
   belongs_to   :user
   has_one_attached :image
+  has_one    :purchase
   
   belongs_to :category
   belongs_to :status
   belongs_to :delivery_cost
   belongs_to :prefecture
   belongs_to :delivery_date
+  
 
     #空の投稿を保存できないようにする
     validates :name, presence: true
