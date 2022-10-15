@@ -24,7 +24,8 @@
       </span>
     </div>
    
-    
+    <% if user_signed_in? && @item.user_id && current_user.id  && @item.purchase == nil %>
+
     <% if user_signed_in? && @item.user_id %>
      <% if current_user.id == @item.user_id %> 
     <%= link_to "商品の編集", edit_item_path, method: :get, class: "item-red-btn" %>
@@ -33,6 +34,7 @@
      <% else %> 
      <%= link_to "購入画面に進む", item_orders_path(@item), class:"item-red-btn"%>
      <% end %> 
+    <% end %>
     <% end %>
 
 
