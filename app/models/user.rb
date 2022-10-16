@@ -2,7 +2,8 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many   :items
-  
+  has_many   :purchases
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -21,7 +22,4 @@ class User < ApplicationRecord
 
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,}+\z/i.freeze
   validates_format_of :password, with: PASSWORD_REGEX, message: 'には6文字以上の英字と数字の両方を含めて設定してください'
-
-  
-
 end
