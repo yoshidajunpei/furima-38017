@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
   before_action :sold_item, only: [:index, :create]
 
   def index
-    @purchase_delivery = PurchaseDelivery.new if current_user.id != @item.user_id
+    @purchase_delivery = PurchaseDelivery.new 
   end
 
   def create
