@@ -7,13 +7,13 @@
     </h2>
     <div class="item-img-content">
       <%= image_tag @item.image,size: 1000, class:'item-image' %>
-      <%# 商品が売れている場合は、sold outを表示 %>
+      
        <% if @item.purchase.present?  %>
       <div class="sold-out">
         <span>Sold Out!!</span>
       </div>
       <% end %>
-      <%# //商品が売れている場合は、sold outを表示 %>
+      
     </div>
     <div class="item-price-box">
       <span class="item-price">
@@ -24,10 +24,8 @@
       </span>
     </div>
    
-    <% if user_signed_in? && @item.user_id && current_user.id  && @item.purchase == nil %>
-
-    <% if user_signed_in? && @item.user_id %>
-     <% if current_user.id == @item.user_id %> 
+    <% if user_signed_in?  && @item.purchase == nil %>
+    <% if current_user.id == @item.user_id %> 
     <%= link_to "商品の編集", edit_item_path, method: :get, class: "item-red-btn" %>
     <p class="or-text">or</p>
     <%= link_to "削除", item_path, method: :delete, class:"item-destroy" %>
@@ -35,7 +33,18 @@
      <%= link_to "購入画面に進む", item_orders_path(@item), class:"item-red-btn"%>
      <% end %> 
     <% end %>
-    <% end %>
+
+    <%# ＜学習メモ＞
+       if ログインしていたら && 購入済みでないもの
+                          
+      ボタン見れる
+      if ログインユーザー == 商品に紐づいているユーザー
+        編集
+        削除
+      else
+        購入
+      end
+    end %>
 
 
     <div class="item-explain-box">
