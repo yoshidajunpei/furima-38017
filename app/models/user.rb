@@ -9,6 +9,7 @@ class User < ApplicationRecord
 
   validates :birth, presence: true
   validates :nick_name, presence: true
+  validates :password, confirmation: true
 
   with_options presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, message: '全角文字（漢字・ひらがな・カタカナ）を使用してください' } do
     validates :first_name
