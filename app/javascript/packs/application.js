@@ -4,13 +4,14 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-require("turbolinks").start()
+// require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 import "bootstrap"
 import "../stylesheets/application"
 require("../item_price")
 require("../card")
+require('../preview')
 
 
 
