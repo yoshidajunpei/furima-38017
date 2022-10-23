@@ -8,6 +8,7 @@
     <div class="item-img-content">
       <%= image_tag @item.image,size: 1000, class:'item-image' %>
       
+      
        <% if @item.purchase.present?  %>
       <div class="sold-out">
         <span>Sold Out!!</span>
