@@ -116,5 +116,35 @@ document.addEventListener('DOMContentLoaded', function(){
     const fileField = document.querySelector('input[type="file"][name="item[images][]"]');
 
     // input要素で値の変化が起きた際に呼び出される関数
+
     fileField.addEventListener('change', changedFileField);
   });
+
+    fileField.addEventListener('change', function(e){
+      console.log("input要素で値の変化が起きました");
+    // 古いプレビューが存在する場合は削除
+    const alreadyPreview = document.querySelector('.preview');
+    if (alreadyPreview) {
+      alreadyPreview.remove();
+    };
+      console.log(e.target.files[0]);
+      const file = e.target.files[0];
+      const blob = window.URL.createObjectURL(file);
+    // 画像を表示するためのdiv要素を生成
+    const previewWrapper = document.createElement('div');
+    previewWrapper.setAttribute('class', 'preview');
+    // 表示する画像を生成
+    const previewImage = document.createElement('img');
+    previewImage.setAttribute('class', 'preview-image');
+    previewImage.setAttribute('src', blob);
+    // CSSを使用した際の記述方法：previewImage.classList.add('preview-size');
+    previewImage.width = 200;
+    previewImage.height = 200;
+
+
+    // 生成したHTMLの要素をブラウザに表示させる
+    previewWrapper.appendChild(previewImage);
+    previewList.appendChild(previewWrapper);
+    });
+});
+
