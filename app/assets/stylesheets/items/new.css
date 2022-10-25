@@ -89,11 +89,10 @@
   margin-bottom: 15px;
 }
 
-/* JSファイルでサイズ変更の記述を反映させる
+ /* JSファイルでサイズ変更の記述を反映させる */ 
 .preview-size{
   height: 200px;
   width: auto;
- 複数画像投稿機能
 }
 
 .other-images {
@@ -115,9 +114,6 @@
   height: 200px;
   width: 200px;
 }
-
-} */
-
 /* /商品画像 */
 
 /* 商品名と商品説明 */
