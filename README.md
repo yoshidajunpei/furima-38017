@@ -55,7 +55,7 @@
 | address            | string     | null: false,                   |
 | building           | string     |                                |
 | phone_namber       | string     | null: false,                   |
-| purchase            | references | null: false, foreign_key: true |
+| purchase           | references | null: false, foreign_key: true |
 ###アソシエーション
 - belongs_to  :purchase
 - belongs_to_active_hash :prefecture_id

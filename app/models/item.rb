@@ -2,7 +2,7 @@ class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   # アソシエーション
   belongs_to :user
-  has_one_attached :image
+  has_many_attached :images
   has_one    :purchase
 
   belongs_to :category
@@ -22,5 +22,8 @@ class Item < ApplicationRecord
   validates :delivery_cost_id, numericality: { other_than: 1, message: "can't be blank" }
   validates :prefecture_id, numericality: { other_than: 1, message: "can't be blank" }
   validates :delivery_date_id, numericality: { other_than: 1, message: "can't be blank" }
-  validates :image, presence: true
+  
+  validates :images, length: { minimum: 1, maximum: 5, message: "は1枚以上5枚以下にしてください" }
 end
+
+
