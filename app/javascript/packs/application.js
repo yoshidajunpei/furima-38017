@@ -12,6 +12,7 @@ import "../stylesheets/application"
 require("../item_price")
 require("../card")
 require('../preview')
+require("../recard")
 
 
 
